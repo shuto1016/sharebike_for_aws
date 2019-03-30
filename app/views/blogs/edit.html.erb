@@ -1,0 +1,10 @@
+<div class="row form">
+  <div class="input-field col s10">
+     <%= form_for @article, :url => {:action => 'update'}, method: :patch do |f| %>
+       <%= f.label :textarea, "本文" %>
+       <%= f.text_area :text, placeholder: '入力', id: "textarea", wrap: "hard", id: "textarea", class: "materialize-textarea" %>
+       <%= button_tag type: "submit", class: "btn-small blue accent-3 submit-margin" do %>送信
+       <% end %>
+     <% end %>
+  </div>
+</div>

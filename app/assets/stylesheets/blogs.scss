@@ -1,0 +1,78 @@
+//application.html.erbのCSS//
+
+.nav-wrapper {
+  padding: 0 50px ;
+}
+//index.html.erbのCSS//
+
+.container{
+  padding-top: 50px;
+  word-wrap: break-word;
+}
+
+.name{
+  float: right;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.paginate{
+  text-align: center;
+}
+
+//deviseのCSS//
+
+.form{
+  padding-top: 100px;
+  padding-left: 170px;
+}
+
+.submit-margin{
+  margin: 20px 0;
+  position: relative;
+}
+
+.content-row{
+  width: 330px;
+  height: 500px;
+  margin: 110px auto;
+  position: relative;
+}
+
+.contents{
+  padding: 20px 30px 25px;
+
+}
+
+.signup-title{
+  padding: 21px 0;
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.label{
+  font-size: 13px;
+  color: grey;
+  display: block;
+  padding-top: 20px;
+
+}
+
+.signup-absolute{
+  position: absolute;
+  text-align: left;
+
+}
+
+#textarea{
+  height: 100px;
+}
+
+
+
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
