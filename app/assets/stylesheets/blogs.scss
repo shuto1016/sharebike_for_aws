@@ -7,8 +7,29 @@
 
 .container{
   padding-top: 50px;
-  word-wrap: break-word;
+  padding-bottom: 30px;
 }
+
+
+.card-container{
+  display: flex;
+  height: 200px;
+
+  .thumb{
+    padding: 10px;
+    width: 320px;
+  }
+  .content{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    word-break: break-all;
+  }
+
+}
+
+
 
 .name{
   float: right;
@@ -52,12 +73,9 @@
   font-weight: bold;
 }
 
-.label{
-  font-size: 13px;
-  color: grey;
-  display: block;
-  padding-top: 20px;
-
+.input-field{
+  width: 80%;
+  margin: auto;
 }
 
 .signup-absolute{
@@ -69,10 +87,3 @@
 #textarea{
   height: 100px;
 }
-
-
-
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-

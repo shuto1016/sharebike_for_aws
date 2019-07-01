@@ -1,0 +1,22 @@
+.col.s12{:style => "margin: 100px auto; width: 380px;"}
+  .card.grey.lighten-4.row.col.s12
+    .contents
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .input-field
+          = f.label :"ユーザー名 (英数字6文字以下)"
+          %em{:style => "font-size: 12px; color: grey;"}
+          = f.text_field :nickname, autofocus: true, maxlength: "6"
+        .input-field
+          = f.label :"メールアドレス"
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .input-field
+          = f.label :"パスワード (英数字6文字以上)"
+          -# - if @minimum_password_length
+          = f.password_field :password, autocomplete: "new-password"
+        .input-field
+          = f.label :"パスワード(確認用)"
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+
+        .actions
+          = f.submit "新規登録", class: "btn-large blue accent-3 submit-margin col s12"
