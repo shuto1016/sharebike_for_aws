@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
 
   before_action :authenticate_user!, only:[:destroy, :new, :edit]
   def index
-    @articles = Article.includes(:user).order('id DESC').page(params[:page]).per(5)
+    @articles = Article.includes(:user).order('id DESC').page(params[:page]).per(10)
   end
 
   def new
