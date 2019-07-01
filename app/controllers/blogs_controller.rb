@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
   def edit
     set_article
     unless @article.user_id == current_user.id
-      redirect_to action: :index
+      move_to_index
     end
 
   end
