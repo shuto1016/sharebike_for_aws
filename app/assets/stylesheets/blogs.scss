@@ -7,8 +7,29 @@
 
 .container{
   padding-top: 50px;
-  word-wrap: break-word;
+  padding-bottom: 30px;
 }
+
+
+.card-container{
+  display: flex;
+  height: 200px;
+
+  .thumb{
+    padding: 10px;
+    width: 320px;
+  }
+  .content{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    word-break: break-all;
+  }
+
+}
+
+
 
 .name{
   float: right;
