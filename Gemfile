@@ -64,5 +64,7 @@ gem "jquery-rails"
 gem 'devise'
 gem 'pry-rails'
 gem 'kaminari'
+gem 'haml-rails'
+gem 'erb2haml'
 
 
