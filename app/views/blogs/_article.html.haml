@@ -1,8 +1,11 @@
 .container
   .col.s12.m6
-    .card.white
-      .card-content.black-text
-        %p= simple_format(article.text)
+    .card
+      .card-container
+        .thumb
+          = image_tag "https://ord.yahoo.co.jp/o/image/RV=1/RE=1562075126/RH=b3JkLnlhaG9vLmNvLmpw/RB=/RU=aHR0cHM6Ly90aGUtYW5zLmpwL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE5LzA1LzIwMTkwNTMwX25pc2hpa29yaV9naS5qcGc-/RS=%5EADB7v6WABWqPcZTcqudqX.UY4zvjYg-;_ylt=A2RCL611Dhpd2xsAjiSU3uV7;_ylu=X3oDMTAyN3Vldmc1BDAD;_ylc=X3IDMgRmc3QDMQRpZHgDMARvaWQDQU5kOUdjUmxBU1VFNjc0TVVwWkp5MjV0WE5KR0NQaGdnN0RUZGN6VUFnMTNVQzE5dmRkYURJQUhUV3pVU215dQRwAzZZeW01N21VBHBvcwMyBHNlYwNzaHcEc2xrA3Nmc3QEdHVybANodHRwczovL21zcC5jLnlpbWcuanAveWppbWFnZT9xPWFSb2J0U1lYeUxHRVFQYnNQZnZlTWI1aVN0Y2hNOHFvY0FwUXlJTmwzVHpDRnRVYk1LOHBrX2JMZVFKNEsxWm1CaUZ1Q1Zjc0N5bHd3aDRmVzJ1UThSR1d3WGpVR19FS29iZ2FmUF9jX1hvUTNrdjRfWmE4U2QxcnRpbXNXaDlRLmd5X1hYMnlHQ1Z3Ynhrb3ZhYmomc2lnPTEzYWQ5dm5yMQ--" ,height: "200px", width: "300px"
+        .content
+          = article.text
       .card-action
         = link_to "詳細", "/blogs/#{article.id}/", method: :get, class: "btn blue accent-3"
         = link_to "編集", "/blogs/#{article.id}/edit", method: :get, class: "btn blue accent-3"
