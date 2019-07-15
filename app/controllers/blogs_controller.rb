@@ -42,6 +42,10 @@ class BlogsController < ApplicationController
     move_to_index
   end
 
+  def show
+    set_article
+  end
+
   private
   def create_params
     params.require(:article).permit(:text).merge(user_id: current_user.id)
