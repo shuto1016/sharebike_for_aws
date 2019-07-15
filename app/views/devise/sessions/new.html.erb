@@ -1,6 +1,9 @@
 <div class="content-row col s12">
   <div class="card grey lighten-4 row col s12">
     <div class="contents">
+      <div class="alert-message">
+        <%= alert%>
+      </div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class="input-field">
