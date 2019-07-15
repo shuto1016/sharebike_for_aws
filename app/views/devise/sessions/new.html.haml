@@ -1,0 +1,16 @@
+.content-row.col.s12
+  .card.grey.lighten-4.row.col.s12
+    .contents
+      .alert-message
+        = alert
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .input-field
+          = f.label :"メールアドレス"
+          = f.email_field :email, autofocus: true, autocomplete:"email"
+        .input-field
+          = f.label :"パスワード"
+          = f.password_field :password, autocomplete: "current-password"
+        .actions
+          = f.submit "ログイン", class: " btn-large blue accent-3 submit-margin col s12"
+  .signup-absolute
+    = render "devise/shared/links"

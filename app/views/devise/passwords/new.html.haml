@@ -1,0 +1,13 @@
+.content-row.col.s12
+  %h2{:style => "margin-bottom: 50px;font-size: 28px;"} パスワードを忘れた場合
+  .card.grey.lighten-4.row.col.s12
+    .contents
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .input.field
+          = f.label :email, class: :label
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .actions
+          = f.submit "Send me",class: " btn-large blue accent-3 submit-margin col s12"
+  .signup-absolute
+    = render "devise/shared/links"
