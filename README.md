@@ -1,45 +1,73 @@
-# README
+## usersテーブル 必須
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, unique:true|
+|email|string|null:false, unique:true|
+|password|string|null:false| 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- has_many :articles, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 
-<%= form_for @article, url: blogs__path do |f| %>
-            <%= f.label :本文 %>
-            <%= f.text_area :article, placeholder: '入力', style: 'width: 100%;height: 300px;' %>
-            <%= button_tag type: "submit", class: "btn-small blue accent-3 submit-margin" do %>
-              送信<i class="icon-arrow-right"></i>
-              <% end %>
-          <% end %>
+## articlesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
+|text|text|null:false|
+|name|string|null:false, index: true|
+
+### Association
+- belongs_to :user
+- belongs_to :category
+- has_many :likes, dependent: :destroy
+- has_many :images, dependent: :destroy
+- has_many :comments, dependent: :destroy
 
 
-<div class="row form">
-  <div class="input-field col s10">
-    <%= form_tag('/blogs', method: :post) do  %>
-    <label for="textarea1">本文</label>
-      <textarea name="text" id="textarea" wrap="hard" class="materialize-textarea"></textarea>
-      <input class="btn-small blue accent-3 submit-margin" type="submit" value="送信">
-    <%end %>
-  </div>
-</div>
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|article_id|references|null: false, foreign_key:true|
+|images|string|null: false|
+
+### Association
+-  belongs_to :product
+
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique:true|
+|parent_id|integer||
+
+### Association
+- has_many :products,
+
+
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|article_id|references|null: false, foreign_key:true|
+|user_id|references|null: false, foreign_key:true|
+
+### Association
+-  belongs_to :article
+-  belongs_to :user
+
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|article_id|references|null: false, foreign_key:true|
+|comment|text|null: false|
+
+### Association
+-  belongs_to :article
+-  belongs_to :user
 
