@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 .col.s12{:style => "margin: 100px auto; width: 400px;"}
-=======
-.col.s12{:style => "margin: 100px auto; width: 380px;"}
->>>>>>> origin/master
   .card.grey.lighten-4.row.col.s12
     .contents
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -16,18 +12,10 @@
           = f.email_field :email, autofocus: true, autocomplete: "email"
         .input-field
           = f.label :"パスワード (英数字6文字以上)"
-<<<<<<< HEAD
-          - if @minimum_password_length
-=======
           -# - if @minimum_password_length
->>>>>>> origin/master
           = f.password_field :password, autocomplete: "new-password"
         .input-field
           = f.label :"パスワード(確認用)"
           = f.password_field :password_confirmation, autocomplete: "new-password"
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
         .actions
           = f.submit "新規登録", class: "btn-large blue accent-3 submit-margin col s12"
