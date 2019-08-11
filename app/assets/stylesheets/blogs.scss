@@ -7,11 +7,6 @@
 
 //deviseのCSS//
 
-.form{
-  padding-top: 100px;
-  padding-left: 170px;
-}
-
 .submit-margin{
   margin: 20px 0;
   position: relative;
@@ -25,7 +20,7 @@
 }
 
 .contents{
-  padding: 50px 30px 25px;
+  padding: 35px 30px 40px;
 
 }
 
@@ -39,14 +34,15 @@
 
 .input-field{
   width: 80%;
-  margin: auto;
+  margin-bottom: 40px;
+  
 }
 
 .signup-absolute{
   position: absolute;
   text-align: left;
-
 }
+
 
 #textarea{
   height: 100px;
