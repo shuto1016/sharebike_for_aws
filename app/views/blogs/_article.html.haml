@@ -5,8 +5,10 @@
         %p
           = simple_format(article.text)
         .images
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m68682806112_1.jpg?1563187497", class: "card__image"
-          = image_tag "https://www.bennetts.co.uk/-/media/bikesocial/2019-january-images/honda-cbr650r-and-cb650r-review/2019-honda-cb650r-and-cbr650r-review_037.ashx?h=493&w=740&la=en&hash=A658BDC1163F5C22F9B75CB051AF801979DD3FC6", class: "card__image"
+          - if article.images.first.present?
+            = image_tag article.images.first.image.url, class: "card__image"
+          - if article.images.second.present?
+            = image_tag article.images.second.image.url, class: "card__image"
 
       .card-action
         = link_to "詳細", "/blogs/#{article.id}", method: :get, class: "btn blue accent-3"
