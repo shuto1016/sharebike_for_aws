@@ -18,6 +18,7 @@
     .text{
       padding-top: 20px;
     }
+
     .images{
       padding-left: 50px;
       .card__image{
@@ -28,9 +29,15 @@
 
   .card-action{
     &__name{
+      position: relative;
       float: right;
       padding-top: 10px;
       font-size: 16px;
+      .like{
+        position: absolute;
+        left: -30px;
+
+      }
     }
   }
 
