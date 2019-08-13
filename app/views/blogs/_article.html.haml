@@ -1,14 +1,17 @@
 .container
-  .col.s12.m6
-    .card.white
-      .card-content.black-text
-        %p
-          = simple_format(article.text)
-        .images
+  .row
+    .card.white.col.s12
+      .card-content.black-text.no-padding
+        .title 
+          件名： 
+          = article.title
+        .text
+          = article.text
+        .images.row
           - if article.images.first.present?
-            = image_tag article.images.first.image.url, class: "card__image"
+            = image_tag article.images.first.image.url, class: "col s8  l5 card__image" 
           - if article.images.second.present?
-            = image_tag article.images.second.image.url, class: "card__image"
+            = image_tag article.images.second.image.url, class: "col s8  l5 card__image"
 
       .card-action
         = link_to "詳細", "/blogs/#{article.id}", method: :get, class: "btn blue accent-3"
