@@ -1,12 +1,14 @@
 class BlogsController < ApplicationController
 
   before_action :authenticate_user!, only:[:destroy, :new, :edit]
+
   def index
     @articles = Article.includes(:user).order('id DESC').page(params[:page]).per(10)
   end
 
   def new
     @article = Article.new
+    @images = @article.images.build
   end
 
   def create
@@ -48,7 +50,7 @@ class BlogsController < ApplicationController
 
   private
   def create_params
-    params.require(:article).permit(:text).merge(user_id: current_user.id)
+    params.require(:article).permit(:text, :title, images_attributes: [:id, :image]).merge(user_id: current_user.id)
   end
 
   def move_to_index
