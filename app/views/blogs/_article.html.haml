@@ -18,5 +18,6 @@
         = link_to "編集", "/blogs/#{article.id}/edit", method: :get, class: "btn blue accent-3"
         = link_to "削除", "/blogs/#{article.id}", method: :delete, class: "btn blue accent-3 delete"
         %span.card-action__name
-          = render partial:'like', locals: {article: article}
+          .like{id: article.id}
+            = render partial:'like/like', locals: {article: article}
           更新日時：#{article.updated_at.to_formatted_s(:date)}   投稿者：#{article.user.nickname}

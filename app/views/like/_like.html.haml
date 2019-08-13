@@ -2,14 +2,14 @@
   - if article.liked?(current_user.id, article.id)
     = link_to unlike_path(article), method: :delete, remote: true do
       .like.liked
-        %i.material-icons{id: article.id} mood 
+        %i.material-icons mood 
       .like-text.liked
         = article.likes.count
       &nbsp;&nbsp;
   - else
     = link_to like_path(article), method: :post, remote: true do
       .like
-        %i.material-icons{id: article.id} mood 
+        %i.material-icons mood 
       .like-text
         = article.likes.count
       &nbsp;&nbsp;
@@ -19,3 +19,6 @@
     %i.material-icons mood 
   = article.likes.count
   &nbsp;&nbsp;
+
+
+  

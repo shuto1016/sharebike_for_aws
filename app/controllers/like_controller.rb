@@ -1,15 +1,15 @@
 class LikeController < ApplicationController
 
   def create
+    @article = Article.find(params[:article_id])
     Like.create(create_params)
-    redirect_to root_path
   end
 
   def destroy
+    @article = Article.find(params[:id])
     set_like
     if @like.user_id == current_user.id
       @like.destroy
-      redirect_to root_path
     end
   end
 
