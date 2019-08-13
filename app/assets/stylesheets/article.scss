@@ -16,7 +16,7 @@
       font-size: 18px;
     }
     .text{
-      padding-top: 20px;
+      padding: 20px 0;
     }
 
     .images{
@@ -33,10 +33,18 @@
       float: right;
       padding-top: 10px;
       font-size: 16px;
+      .like-text{
+        display: inline;
+        color: grey;
+      }
       .like{
         position: absolute;
         left: -30px;
-
+        display: inline;
+        color: grey;
+      }
+      .liked{
+        color: red;
       }
     }
   }
