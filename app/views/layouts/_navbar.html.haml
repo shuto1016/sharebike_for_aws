@@ -1,0 +1,16 @@
+%nav.blue.accent-3
+  .nav-wrapper
+    = link_to "Blog", "/", class: "brand-logo right-align"
+    = render partial: 'layouts/slidebar'
+    %ul#nav-mobile.right.hide-on-med-and-down
+      - if user_signed_in?
+        %li
+          ユーザー名：#{current_user.nickname}
+        %li= link_to "サインアウト", "/users/sign_out", method: :delete
+        %li= link_to "いいね一覧", ""
+        %li
+      - else
+        %li= link_to "サインイン", "/users/sign_in"
+        %li= link_to "新規登録", "/users/sign_up"
+      %li
+        = link_to "投稿", "/blogs/new"
