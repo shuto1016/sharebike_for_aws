@@ -13,19 +13,6 @@
     %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"}
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
   %body
-    %nav.blue.accent-3
-      .nav-wrapper
-        = link_to "Blog", "/", class: "brand-logo right-align"
-        %ul#nav-mobile.right.hide-on-med-and-down
-          - if user_signed_in?
-            %li
-              ユーザー名：#{current_user.nickname}
-          - else
-            %li= link_to "サインイン", "/users/sign_in"
-          - if user_signed_in?
-            %li= link_to "サインアウト", "/users/sign_out", method: :delete
-          - else
-            %li= link_to "新規登録", " /users/sign_up"
-          %li
-            = link_to "投稿", "/blogs/new"
+
+    = render partial: 'layouts/navbar'
     = yield
