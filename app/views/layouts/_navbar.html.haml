@@ -7,7 +7,7 @@
         %li
           ユーザー名：#{current_user.nickname}
         %li= link_to "サインアウト", "/users/sign_out", method: :delete
-        %li= link_to "いいね一覧", ""
+        %li= link_to "いいね一覧", "/like"
         %li
       - else
         %li= link_to "サインイン", "/users/sign_in"

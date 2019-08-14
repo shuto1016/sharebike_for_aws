@@ -1,5 +1,15 @@
 class LikeController < ApplicationController
 
+
+  # いいね一覧ページ
+  def index
+    @likes = Like.where(user_id: current_user.id)
+    @articles =[]
+    @likes.each do |like|
+      @articles << Article.find_by(id: like.article_id)
+    end
+  end
+
   def create
     @article = Article.find(params[:article_id])
     Like.create(create_params)
