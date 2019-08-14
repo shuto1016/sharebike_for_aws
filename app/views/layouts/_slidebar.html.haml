@@ -1,0 +1,32 @@
+%ul#slide-out.sidenav
+  -if user_signed_in?
+    %li
+      = link_to "" do
+        %i.material-icons> tag_faces
+        ユーザー名：
+        = current_user.nickname
+    %li
+      = link_to "/users/sign_out", method: :delete do
+        %i.material-icons> weekend
+        サインアウト
+  - else
+    %li
+      = link_to "/users/sign_in" do
+        %i.material-icons> vpn_key
+        サインイン
+    %li
+      = link_to "/users/sign_up" do
+        %i.material-icons> unarchive
+        新規登録
+  %li
+    .divider
+  %li
+    = link_to "/blogs/new" do
+      %i.material-icons> touch_app
+      投稿
+  %li
+    = link_to "" do
+      %i.material-icons> thumb_up
+      いいね一覧
+%a.sidenav-trigger{"data-target" => "slide-out", :href => "#"}
+  %i.material-icons.white-text menu
