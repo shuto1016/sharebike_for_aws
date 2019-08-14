@@ -2,6 +2,10 @@
   padding-bottom: 0px !important;
 }
 
+.no-margin-bottom{
+  margin-bottom: 0px !important;
+}
+
 .container{
     padding: 50px 100px 50px;
     word-wrap: break-word;
@@ -31,15 +35,13 @@
     &__name{
       position: relative;
       float: right;
-      padding-top: 10px;
+      margin-top: 10px;
       font-size: 16px;
       .like-text{
         display: inline;
         color: grey;
       }
       .like{
-        position: absolute;
-        left: -30px;
         display: inline;
         color: grey;
       }

@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
 
   def new
     @article = Article.new
-    @images = @article.images.build
+    2.times { @images = @article.images.build }
   end
 
   def create
@@ -39,7 +39,7 @@ class BlogsController < ApplicationController
   def update
     set_article
     if @article.user_id == current_user.id
-      @article.update(create_params)
+      @article.update(edit_params)
     end
     move_to_index
   end
@@ -51,6 +51,10 @@ class BlogsController < ApplicationController
   private
   def create_params
     params.require(:article).permit(:text, :title, images_attributes: [:id, :image]).merge(user_id: current_user.id)
+  end
+
+  def edit_params
+    params.require(:article).permit(:text, :title, images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index

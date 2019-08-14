@@ -1,1 +1,22 @@
-= render partial: "form"
+.container
+  .row
+    .col.s12
+      = form_for @article, url: blog_path(@article), method: :patch do |f|
+        .input-field.col.s4
+          = f.label :"タイトル"
+          = f.text_field :title, class: "input-field", size: "50px"
+        .input-field.col.s10
+          = f.label :"本文"
+          = f.text_area :text, wrap: "hard", id: "textarea", class: "materialize-textarea"
+        .input-field.col.s10
+          - if @article.images.first.present?
+            = image_tag @article.images.first.image.url, class: "col s10 l5 edit-image" 
+          - if @article.images.second.present?
+            = image_tag @article.images.second.image.url, class: "col s10 l5 edit-image" 
+        .input-field.col.s10
+          = f.fields_for :images do |fa|
+            = fa.file_field :image
+
+        .input-field.col.s10
+          = button_tag type: "submit", class: "btn-small blue accent-3 submit-margin" do
+            送信

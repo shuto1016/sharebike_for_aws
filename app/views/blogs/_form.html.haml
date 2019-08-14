@@ -10,7 +10,7 @@
           = f.text_area :text, wrap: "hard", id: "textarea", class: "materialize-textarea"
         .input-field.col.s10
           = f.fields_for :images do |fa|
-            = fa.file_field :image, multiple: true, name: 'article[images_attributes][][image]'
+            = fa.file_field :image
         .input-field.col.s10
           = button_tag type: "submit", class: "btn-small blue accent-3 submit-margin" do
             送信
