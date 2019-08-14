@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
 
   def new
     @article = Article.new
-    @images = @article.images.build
+    2.times { @images = @article.images.build }
   end
 
   def create
