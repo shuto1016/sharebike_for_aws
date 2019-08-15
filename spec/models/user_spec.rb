@@ -37,7 +37,7 @@ describe User do
       expect(user.errors[:nickname]).to include("は8文字以内で入力してください")
     end
 
-    it "nicknameが6文字以下では登録できること" do
+    it "nicknameが8文字以下では登録できること" do
       user = build(:user, nickname: "eeeeee")
       expect(user).to be_valid   
     end
