@@ -69,4 +69,33 @@ describe BlogsController, type: :controller do
     end
   end
 
+  describe 'POST #create' do
+    context 'ログイン時' do
+      before do
+        login user
+      end
+
+      context 'articleの保存に成功した場合' do
+
+      end
+
+      context 'articleの保存に失敗した場合'do
+      end
+    end
+
+    context 'ログアウト時' do
+    end
+  end
+
+
+
 end
+
+# ログインしているかつ、保存に成功した場合
+# articleの保存はできたのか
+# 意図した画面に遷移しているか
+# ログインしているが、保存に失敗した場合
+# articleの保存は行われなかったか
+# 意図したビューが描画されているか
+# ログインしていない場合
+# 意図した画面にリダイレクトできているか
