@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
 
-  before_action :authenticate_user!, only:[:destroy, :new, :edit]
+  # before_action :authenticate_user!, only:[:destroy, :new, :edit, update, :create]
+  before_action :set_article, only:[:show, :destroy, :edit, :update ]
 
   def index
     @articles = Article.includes(:user).order('id DESC').page(params[:page]).per(10)
@@ -17,7 +18,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+
   end
 
   def destroy
@@ -29,23 +30,17 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    set_article
-    unless @article.user_id == current_user.id
-      move_to_index
-    end
+    # unless @article.user_id == current_user.id
+    #   move_to_index
+    # end
 
   end
 
   def update
-    set_article
     if @article.user_id == current_user.id
       @article.update(edit_params)
     end
     move_to_index
-  end
-
-  def show
-    set_article
   end
 
   private
