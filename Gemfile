@@ -41,6 +41,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'mysql2', '0.5.2'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 
 end
 
@@ -59,6 +62,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'faker'
+
 end
 
 group :production do
@@ -77,3 +82,4 @@ gem 'erb2haml'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+
