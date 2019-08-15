@@ -13,8 +13,12 @@ class BlogsController < ApplicationController
   end
 
   def create
-    Article.create(create_params)
-    move_to_index
+    @article = Article.new(create_params)
+    if @article.save
+      move_to_index
+    else
+      redirect_to new_blog_path
+    end
   end
 
   def show
