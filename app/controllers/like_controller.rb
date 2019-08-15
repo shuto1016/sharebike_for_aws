@@ -23,16 +23,13 @@ class LikeController < ApplicationController
     end
   end
 
+  private
+  def create_params
+    params.permit(:article_id).merge(user_id: current_user.id)
+  end
 
-private
-def create_params
-  params.permit(:article_id).merge(user_id: current_user.id)
-end
-
-def set_like
-  @like = Like.find_by(user_id: current_user.id, article_id: params[:id])
-end
-
-
-
+  def set_like
+    @like = Like.find_by(user_id: current_user.id, article_id: params[:id])
+  end
+  
 end
