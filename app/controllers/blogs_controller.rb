@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
 
-  # before_action :authenticate_user!, only:[:destroy, :new, :edit, update, :create]
+  before_action :authenticate_user!, only:[:destroy, :new, :edit, :update, :create]
   before_action :set_article, only:[:show, :destroy, :edit, :update ]
 
   def index
@@ -30,9 +30,9 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    # unless @article.user_id == current_user.id
-    #   move_to_index
-    # end
+    unless @article.user_id == current_user.id
+      move_to_index
+    end
 
   end
 
