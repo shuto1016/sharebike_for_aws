@@ -28,6 +28,8 @@ describe BlogsController, type: :controller do
     end
   end
 
+
+
   describe 'GET #edit' do
 
     context 'ログイン時' do
@@ -68,6 +70,8 @@ describe BlogsController, type: :controller do
       expect(response).to render_template :index
     end
   end
+
+
 
   describe 'POST #create' do
     let(:params) {{user_id: user.id, }}
@@ -111,6 +115,54 @@ describe BlogsController, type: :controller do
     context 'ログアウト時' do
       it 'ログイン画面に遷移しているか' do
         post :create, params: params
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+  end
+
+
+  
+  describe 'DELETE #destroy' do
+    
+    context 'ログイン時' do
+      before do
+        login user
+      end
+
+      context 'articleの削除に成功した場合' do
+
+        it 'articleの削除が行われた' do
+          expect{
+            delete :destroy, params: { id: article }
+        }.to change(Article, :count).by(0)
+        end
+        
+        it 'root画面に遷移しているか' do
+          delete :destroy, params: { id: article }
+          expect(response).to redirect_to(root_path)
+        end
+      end
+
+      context 'articleの削除に失敗した場合'do
+        let(:user2) { create(:user) }
+        let(:article2) { create(:article, user: user2) }
+     
+        it 'articleの削除が行われなかった' do
+          expect{
+            delete :destroy, params: { id: article2 }
+        }.to change(Article, :count).by(1)
+        end
+
+        it 'root画面に遷移しているか' do
+          delete :destroy, params: { id: article2 }
+          expect(response).to redirect_to(root_path)
+        end
+      end
+    end
+
+    context 'ログアウト時' do
+      it 'ログイン画面に遷移しているか' do
+        delete :destroy, params: { id: article }
         expect(response).to redirect_to(new_user_session_path)
       end
     end
