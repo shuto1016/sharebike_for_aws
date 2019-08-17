@@ -1,10 +1,10 @@
 ## Sharebike
-https://blog-miniapp.herokuapp.com/　　
-自分のバイク情報を共有し、検索もできるSNSです。
+https://blog-miniapp.herokuapp.com/  
+自分のバイク情報を共有し、検索もできるSNSです。  
 
-テスト用アカウント　　
-メールアドレス: test@test.com　　
-パスワード: 111111　　
+テスト用アカウント  
+メールアドレス: test@test.com  
+パスワード: 111111  
 
 ## 機能と使用技術
 * ユーザー機能
@@ -35,7 +35,7 @@ https://blog-miniapp.herokuapp.com/　　
 * heroku
 * 画像ストレージ(Amazon S3)
 
-# * DB設計
+* DB設計
 
 ## usersテーブル 
 
