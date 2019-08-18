@@ -11,17 +11,17 @@ https://blog-miniapp.herokuapp.com/
   * ログイン機能(devise)
 * 記事機能
   * 新規投稿機能
-  * 複数画像投稿機能(carrerwave,mini_magick)
+  * 複数画像投稿機能(carrierwave,mini_magick)
   * 詳細表示機能
   * 一覧表示機能(ページネーション)
   * 編集・削除機能
 * いいね機能
- * Ajax通信によるいいね機能
- * いいね一覧機能
+  * Ajax通信によるいいね機能
+  * いいね一覧機能
 * レスポンシブ対応(CSSフレームワーク：Materialize)
 
 ## テスト
- * RSpec
+ * RSpec(factory_bot,faker)
   * 単体テスト機能
   * 統合テスト機能
 
@@ -29,13 +29,13 @@ https://blog-miniapp.herokuapp.com/
 * 言語(Ruby 2.3.1)
 * フレームワーク(Rails 5.2.1)
 * データベース(MySQL)
-* 開発(VSCode)
+* コードエディタ(VSCode)
 
 ## 本番環境
 * heroku
 * 画像ストレージ(Amazon S3)
 
-* DB設計
+<!-- # DB設計
 
 ## usersテーブル 
 
@@ -108,5 +108,5 @@ https://blog-miniapp.herokuapp.com/
 
 ### Association
 -  belongs_to :article
--  belongs_to :user
+-  belongs_to :user -->
 
