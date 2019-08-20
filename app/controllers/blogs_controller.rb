@@ -22,7 +22,8 @@ class BlogsController < ApplicationController
   end
 
   def show
-
+    @blog = Article.find(params[:id])
+    @comments = @article.comments.includes(:user).order("id ASC")
   end
 
   def destroy
