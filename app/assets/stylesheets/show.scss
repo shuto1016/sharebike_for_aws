@@ -25,6 +25,21 @@ h5{
   padding: 15px 5px 5px;
   border-bottom: solid 1px;
   border-color: gray;
-  font-size: 18px;
+  font-size: 17px;
+  .main-contents{
+    display: flex;
+    &__name{
+      width: 115px;
+    }
+
+    &__text{
+      width:80%;
+      margin: 0 !important;
+    }
+  }
+  .sub-contents{
+    text-align: right;
+    font-size: 14px;
+  }
 }
 

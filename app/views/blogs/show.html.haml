@@ -13,6 +13,13 @@
       - if @comments
         - @comments.each do|comment|
           .comment-contents
-            = link_to comment.user.nickname, "/users/#{comment.user_id}"
-            ：
-            = comment.text
+            .main-contents.no-padding
+              .main-contents__name
+                = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                ：
+              .main-contents__text.col.l10.s9.no-padding
+                = comment.text
+            .sub-contents
+              = @article.updated_at.to_formatted_s(:datetime) 
+              &nbsp;&nbsp;
+              = link_to "削除する"

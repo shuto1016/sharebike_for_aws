@@ -2,9 +2,20 @@ $(function(){
 
   function buildHtml(comment){
     var html = `<div class="comment-contents">
-                    <a href=/users/${comment.user_id}>${comment.user_nickname}</a>
-                    ：
-                  ${comment.text}
+                  <div class="main-contents no-padding">
+                    <div class="main-contents__name">
+                      <a href=/users/${comment.user_id}>${comment.user_nickname}</a>
+                      ：
+                    </div>
+                    <div class="main-contents__text col l10 s9 no-padding">
+                      ${comment.text}
+                    </div>
+                  </div>
+                  <div class="sub-contents">
+                    ${comment.updated_at}
+                    &nbsp;&nbsp;
+                    <a href=/user>削除する</a>
+                  </div>
                 </div>`
     return html;
   }
