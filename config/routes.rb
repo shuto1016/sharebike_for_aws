@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post   '/like/:article_id' => 'like#create',   as: 'like'
   delete '/like/:id' => 'like#destroy', as: 'unlike'
   post '/blogs/:article_id/comments' => 'comments#create', as: 'comments'
+  delete '/blogs/:comment_id/comments' => 'comments#destroy', as: 'comments_destroy'
+
 end
