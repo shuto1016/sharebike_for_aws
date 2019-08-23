@@ -1,7 +1,7 @@
 $(function(){
 
   function buildHtml(comment){
-    var html = `<div class="comment-contents">
+    var html = `<div class="comment-contents" id="${comment.id}">
                   <div class="main-contents no-padding">
                     <div class="main-contents__name">
                       <a href=/users/${comment.user_id}>${comment.user_nickname}</a>
@@ -14,7 +14,7 @@ $(function(){
                   <div class="sub-contents">
                     ${comment.updated_at}
                     &nbsp;&nbsp;
-                    <a href=/user>削除する</a>
+                    <a class="delete_comment" data-method="delete" href=/blogs/${comment.id}/comments>削除する</a>
                   </div>
                 </div>`
     return html;
