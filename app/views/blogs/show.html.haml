@@ -12,7 +12,7 @@
       %h5 コメント一覧
       - if @comments
         - @comments.each do|comment|
-          .comment-contents
+          .comment-contents{id: "#{comment.id}"}
             .main-contents.no-padding
               .main-contents__name
                 = link_to comment.user.nickname, "/users/#{comment.user_id}"
@@ -20,6 +20,6 @@
               .main-contents__text.col.l10.s9.no-padding
                 = comment.text
             .sub-contents
-              = @article.updated_at.to_formatted_s(:datetime) 
+              = comment.updated_at.to_formatted_s(:datetime) 
               &nbsp;&nbsp;
-              = link_to "削除する"
+              = link_to "削除する", "/blogs/#{comment.id}/comments", method: :delete, class: "delete_comment"
