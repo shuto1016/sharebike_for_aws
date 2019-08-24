@@ -5,8 +5,9 @@
   %br/
   パスワード: 111111
   .card.grey.lighten-4.row.col.s12
-
     .contents
+      -# .alert-message
+      -#   = alert
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .input-field
           = f.label :"メールアドレス"
