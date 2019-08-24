@@ -21,7 +21,7 @@ https://blog-miniapp.herokuapp.com/
 * いいね機能
   * 非同期通信によるいいね機能
   * いいね一覧機能
-* レスポンシブ対応(CSSフレームワーク：Materialize)
+* レスポンシブ対応
 
 ## テスト
  * RSpec(factory_bot,faker)
@@ -29,7 +29,7 @@ https://blog-miniapp.herokuapp.com/
   * 統合テスト機能
 
 ## 開発環境
-* 言語(Ruby 2.3.1)
+* 言語(Ruby 2.3.1, Javascript)
 * フレームワーク(Rails 5.2.1)
 * データベース(MySQL)
 * コードエディタ(VSCode)
@@ -37,6 +37,13 @@ https://blog-miniapp.herokuapp.com/
 ## 本番環境
 * heroku
 * 画像ストレージ(Amazon S3)
+
+## 使用ツール・ライブラリ
+* materialize(cssフレームワーク)
+* JQuery
+* Sass
+* haml
+
 
 <!-- # DB設計
 

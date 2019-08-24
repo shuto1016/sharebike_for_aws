@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
   def create
     @article = Article.new(create_params)
     if @article.save
-      move_to_index
+      redirect_to root_path, notice: '記事を作成しました'
     else
       redirect_to new_blog_path
     end
@@ -30,8 +30,8 @@ class BlogsController < ApplicationController
     set_article
     if @article.user_id == current_user.id
       @article.destroy
+      redirect_to root_path, notice: '記事を削除しました'
     end
-    move_to_index
   end
 
   def edit
@@ -44,8 +44,8 @@ class BlogsController < ApplicationController
   def update
     if @article.user_id == current_user.id
       @article.update(edit_params)
+      redirect_to root_path, notice: '記事を編集しました'
     end
-    move_to_index
   end
 
   private
