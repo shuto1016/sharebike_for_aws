@@ -5,7 +5,8 @@
     %ul#nav-mobile.right.hide-on-med-and-down
       - if user_signed_in?
         %li
-          ユーザー名：#{current_user.nickname}
+          = link_to(user_path(current_user)) do
+            ユーザー名：#{current_user.nickname}
         %li= link_to "サインアウト", "/users/sign_out", method: :delete
         %li= link_to "いいね一覧", "/like"
         %li
