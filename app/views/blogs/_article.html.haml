@@ -20,4 +20,6 @@
         %span.card-action__name
           .like{id: article.id}
             = render partial:'like/like', locals: {article: article}
-          更新日時：#{article.updated_at.to_formatted_s(:datetime)}   投稿者：#{article.user.nickname}
+          更新日時：#{article.updated_at.to_formatted_s(:datetime)}   
+          投稿者：
+          = link_to "#{article.user.nickname}", user_path(article.user)
