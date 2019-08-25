@@ -22,12 +22,10 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Article.find(params[:id])
     @comments = @article.comments.includes(:user).order("id ASC")
   end
 
   def destroy
-    set_article
     if @article.user_id == current_user.id
       @article.destroy
       redirect_to root_path, notice: '記事を削除しました'
