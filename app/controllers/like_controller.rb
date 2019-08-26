@@ -1,5 +1,6 @@
 class LikeController < ApplicationController
 
+  before_action :authenticate_user!, only:[:index, :create, :destroy]
 
   # いいね一覧ページ
   def index
