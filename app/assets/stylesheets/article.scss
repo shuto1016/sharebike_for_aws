@@ -18,6 +18,18 @@
       padding: 3px 0;
       font-size: 22px;
     }
+    .category{
+
+      &__maker{
+        display: inline-block;
+        font-size: 12px;
+        background: #e3f2fd;
+        padding: 3px 5px;
+        margin: 3px;
+        border-radius: 5px;
+
+      }
+    }
     .text{
       padding: 20px 10px;
     }

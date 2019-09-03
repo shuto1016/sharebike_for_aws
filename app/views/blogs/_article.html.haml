@@ -5,6 +5,12 @@
         .title 
           件名： 
           = article.title
+          - if article.makers.exists?
+            .category
+              - article.makers.each do |maker|
+                .category__maker
+                  = maker.name
+
         .text
           = article.text
         .images.row
