@@ -1,0 +1,17 @@
+.checkbox-field{
+  margin-bottom: 5px;
+  label{
+    font-size: 14px;
+    color: black;
+  }
+}
+
+
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: relative !important;
+    margin-right: 7px;
+    opacity: 1 !important;
+    pointer-events: none;
+}
+

@@ -8,9 +8,16 @@
         .input-field.col.s10
           = f.label :"本文"
           = f.text_area :text, wrap: "hard", id: "textarea", class: "materialize-textarea"
+        
+        .checkbox-field.col.s12
+          = f.collection_check_boxes(:maker_ids, Maker.all, :id, :name, class: "browser-default") do |b|
+            = b.label {b.check_box + b.text}
+
+
         .input-field.col.s10
           = f.fields_for :images do |fa|
             = fa.file_field :image
+        
         .input-field.col.s10
           = button_tag type: "submit", class: "btn-small blue accent-3 submit-margin" do
             送信
