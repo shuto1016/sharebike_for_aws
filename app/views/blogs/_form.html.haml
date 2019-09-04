@@ -17,6 +17,9 @@
           = f.collection_check_boxes(:displacement_ids, Displacement.all, :id, :cc) do |b|
             = b.label {b.check_box + b.text}
 
+        .checkbox-field.col.s10
+          = f.collection_check_boxes(:type_ids, Type.all, :id, :name) do |b|
+            = b.label {b.check_box + b.text}
 
         .input-field.col.s10
           = f.fields_for :images do |fa|

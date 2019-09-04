@@ -14,6 +14,10 @@
             - article.displacements.each do |displacement|
               .category__displacemenet
                 = displacement.cc
+          - if article.types.exists?
+            - article.types.each do |type|
+              .category__type
+                = type.name
 
         .text
           = article.text
