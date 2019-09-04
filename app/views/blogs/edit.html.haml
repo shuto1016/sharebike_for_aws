@@ -8,6 +8,15 @@
         .input-field.col.s10
           = f.label :"本文"
           = f.text_area :text, wrap: "hard", id: "textarea", class: "materialize-textarea"
+
+        .checkbox-field.col.s10
+          = f.collection_check_boxes(:maker_ids, Maker.all, :id, :name, class: "browser-default") do |b|
+            = b.label {b.check_box + b.text}
+
+        .checkbox-field.col.s10
+          = f.collection_check_boxes(:displacement_ids, Displacement.all, :id, :cc) do |b|
+            = b.label {b.check_box + b.text}
+
         .input-field.col.s10
           - if @article.images.first.present?
             = image_tag @article.images.first.image.url, class: "col s10 l5 edit-image" 

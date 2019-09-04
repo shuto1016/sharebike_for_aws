@@ -48,11 +48,11 @@ class BlogsController < ApplicationController
 
   private
   def create_params
-    params.require(:article).permit(:text, :title, maker_ids: [], images_attributes: [:id, :image]).merge(user_id: current_user.id)
+    params.require(:article).permit(:text, :title, maker_ids: [], displacement_ids: [], images_attributes: [:id, :image]).merge(user_id: current_user.id)
   end
 
   def edit_params
-    params.require(:article).permit(:text, :title, images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
+    params.require(:article).permit(:text, :title, maker_ids: [], displacement_ids: [], images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index

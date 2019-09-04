@@ -5,11 +5,15 @@
         .title 
           件名： 
           = article.title
+          .category
           - if article.makers.exists?
-            .category
-              - article.makers.each do |maker|
-                .category__maker
-                  = maker.name
+            - article.makers.each do |maker|
+              .category__maker
+                = maker.name
+          - if article.displacements.exists?
+            - article.displacements.each do |displacement|
+              .category__displacemenet
+                = displacement.cc
 
         .text
           = article.text

@@ -27,7 +27,16 @@
         padding: 3px 5px;
         margin: 3px;
         border-radius: 5px;
+      }
 
+      &__displacemenet{
+        @extend .category__maker;
+        background: #fce4ec; 
+      }
+
+      &__type{
+        @extend .category__maker;
+        background: #e0f7fa;
       }
     }
     .text{
