@@ -9,6 +9,11 @@ before_action :ransack_search
   end
 
   def ransack_search
-    @q = Article.ransack(params[:q])
+    @q = Article.ransack(search_params)
+  end
+  
+  private
+  def search_params
+    params.permit(:q)
   end
 end
