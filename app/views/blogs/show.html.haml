@@ -1,25 +1,28 @@
-
-= render partial: "article", locals: {article: @article}
-
-.container.no-padding
+.container
   .row
-    .col.s12.l11.no-padding
+    .col.s12.l9
+      = render partial: "article", locals: {article: @article}
       - if current_user
         = form_tag("/blogs/#{@article.id}/comments", method: :post, id: "new_comment") do
           %textarea.comment-form{name: "text", placeholder: "コメントする"}
           %input{type: "submit", value: "コメント", class: "white-text blue accent-3 col s12  send"}
-    .comments.col.s12.l11.no-padding
-      %h5 コメント一覧
-      - if @comments
-        - @comments.each do|comment|
-          .comment-contents{id: "#{comment.id}"}
-            .main-contents.no-padding
-              .main-contents__name
-                = link_to comment.user.nickname, "/users/#{comment.user_id}"
-                ：
-              .main-contents__text.col.l10.s9.no-padding
-                = comment.text
-            .sub-contents
-              = comment.updated_at.to_formatted_s(:datetime) 
-              &nbsp;&nbsp;
-              = link_to "削除する", "/blogs/#{comment.id}/comments", method: :delete, class: "delete_comment"
+      .comments.white
+        %h5 コメント一覧
+        - if @comments
+          - @comments.each do|comment|
+            .comment-contents{id: "#{comment.id}"}
+              .main-contents.no-padding
+                .main-contents__name
+                  = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                  ：
+                .main-contents__text.no-padding
+                  = comment.text
+              .sub-contents
+                = comment.updated_at.to_formatted_s(:datetime) 
+                &nbsp;&nbsp;
+                = link_to "削除する", "/blogs/#{comment.id}/comments", method: :delete, class: "delete_comment"
+    = render partial: "layouts/sidebar"
+
+.container.no-padding
+  .row
+    .col.s12.l9

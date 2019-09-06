@@ -1,2 +1,8 @@
-- @articles.each do |article|
-  = render partial: "blogs/article", locals: {article: article}
+.container
+  .row
+    .col.s12.l9
+      - @articles.each do |article|
+        = render partial: "blogs/article", locals: {article: article}
+
+    = render partial: "layouts/sidebar"
+

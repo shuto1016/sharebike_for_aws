@@ -1,39 +1,38 @@
-.container
-  .row
-    .card.white.col.s12.l11
-      .card-content.black-text.no-padding
-        .title 
-          件名： 
-          = article.title
-          .category
-          - if article.makers.exists?
-            - article.makers.each do |maker|
-              .category__maker
-                = maker.name
-          - if article.displacements.exists?
-            - article.displacements.each do |displacement|
-              .category__displacemenet
-                = displacement.cc
-          - if article.types.exists?
-            - article.types.each do |type|
-              .category__type
-                = type.name
 
-        .text
-          = article.text
-        .images.row
-          - if article.images.first.present?
-            = image_tag article.images.first.image.url, class: "col s8  l5 card__image" 
-          - if article.images.second.present?
-            = image_tag article.images.second.image.url, class: "col s8  l5 card__image"
+.card.article
+  .card-content.black-text.no-padding
+    .title 
+      件名： 
+      = article.title
+      .category
+      - if article.makers.exists?
+        - article.makers.each do |maker|
+          .category__maker
+            = maker.name
+      - if article.displacements.exists?
+        - article.displacements.each do |displacement|
+          .category__displacemenet
+            = displacement.cc
+      - if article.types.exists?
+        - article.types.each do |type|
+          .category__type
+            = type.name
 
-      .card-action
-        = link_to "詳細", "/blogs/#{article.id}", method: :get, class: "btn blue accent-3"
-        = link_to "編集", "/blogs/#{article.id}/edit", method: :get, class: "btn blue accent-3"
-        = link_to "削除", "/blogs/#{article.id}", method: :delete, class: "btn blue accent-3 delete"
-        %span.card-action__name
-          .like{id: article.id}
-            = render partial:'like/like', locals: {article: article}
-          更新日時：#{article.updated_at.to_formatted_s(:datetime)}   
-          投稿者：
-          = link_to "#{article.user.nickname}", user_path(article.user)
+    .text
+      = article.text
+    .images.row
+      - if article.images.first.present?
+        = image_tag article.images.first.image.url, class: "col s8  l5 card__image" 
+      - if article.images.second.present?
+        = image_tag article.images.second.image.url, class: "col s8  l5 card__image"
+
+  .card-action
+    = link_to "詳細", "/blogs/#{article.id}", method: :get, class: "btn blue accent-3"
+    = link_to "編集", "/blogs/#{article.id}/edit", method: :get, class: "btn blue accent-3"
+    = link_to "削除", "/blogs/#{article.id}", method: :delete, class: "btn blue accent-3 delete"
+    %span.card-action__name
+      .like{id: article.id}
+        = render partial:'like/like', locals: {article: article}
+      更新日時：#{article.updated_at.to_formatted_s(:datetime)}   
+      投稿者：
+      = link_to "#{article.user.nickname}", user_path(article.user)
