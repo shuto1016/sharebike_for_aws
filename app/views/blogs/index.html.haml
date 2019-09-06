@@ -1,4 +1,9 @@
-- @articles.each do |article|
-  = render partial: "article", locals: {article: article}
-.container{:style => "padding-top: 1px;"}
-  = paginate(@articles)
+.container
+  .row
+    .col.s12.l9
+      - @articles.each do |article|
+        = render partial: "article", locals: {article: article}
+    = render partial: "layouts/sidebar"
+
+    .col.s12
+      = paginate(@articles)

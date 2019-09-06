@@ -18,13 +18,11 @@ Article.create!(
   [
     {
       user_id: '1',
-      category_id: '1',
       title: 'アイウエオ',
       text: '今日は暑い'
     },
     {
       user_id: '2',
-      category_id: '2',
       title: 'かくけこ',
       text: '今日は寒い'
     }

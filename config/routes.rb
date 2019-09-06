@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'blogs#index'
+  ## article機能のroute
   resources :blogs
 
   ## user機能のroute
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
 
   ## コメント機能のroute
   post '/blogs/:article_id/comments' => 'comments#create', as: 'comments'
-  delete '/blogs/:comment_id/comments' => 'comments#destroy', as: 'comments_destroy'
+  delete '/blogs/:comment_id/comments' => 'comments#destroy', as: 'comments_destroy'  
 
 end

@@ -1,0 +1,29 @@
+.sidebar.col.s12.m12.l3
+  .card
+    .card__user
+      %i.material-icons> wc
+      &ensp;ユーザー一覧
+    = search_form_for @q, url: blogs_path  do |f|
+      = f.search_field :title_cont, class: "search-form",placeholder: "件名で検索"
+      .card__maker
+        .title
+          %i.material-icons> done
+          %spanメーカー
+        .card__maker-list
+          = f.collection_check_boxes(:makers_id_in, Maker.all, :id, :name)
+      .card__displacement
+        .title
+          %i.material-icons> done
+          %span排気量
+        .card__displacement-list.col.s12
+          = f.collection_check_boxes(:displacements_id_in, Displacement.all, :id, :cc)
+      .card__type
+        .title
+          %i.material-icons> done
+          %spanタイプ
+        .card__type-list
+          = f.collection_check_boxes(:types_id_in, Type.all, :id, :name)
+
+      .search-buttons
+        %input{type: "reset", value: "クリア", class: "search-buttons__reset"}
+        = f.submit '検索', class: 'search-buttons__submit'

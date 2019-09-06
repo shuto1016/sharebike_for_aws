@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :set_article, only:[:show, :destroy, :edit, :update ]
 
   def index
-    @articles = Article.includes(:user).order('id DESC').page(params[:page]).per(10)
+    @articles = @q.result(distinct: true).includes(:user).order('id DESC').page(params[:page]).per(10)
   end
 
   def new
@@ -48,11 +48,11 @@ class BlogsController < ApplicationController
 
   private
   def create_params
-    params.require(:article).permit(:text, :title, images_attributes: [:id, :image]).merge(user_id: current_user.id)
+    params.require(:article).permit(:text, :title, maker_ids: [], displacement_ids: [], type_ids: [], images_attributes: [:id, :image]).merge(user_id: current_user.id)
   end
 
   def edit_params
-    params.require(:article).permit(:text, :title, images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
+    params.require(:article).permit(:text, :title, maker_ids: [], displacement_ids: [], type_ids: [], images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index
