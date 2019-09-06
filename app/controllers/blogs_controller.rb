@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :set_article, only:[:show, :destroy, :edit, :update ]
 
   def index
-    @articles = Article.includes(:user).order('id DESC').page(params[:page]).per(10)
+    @articles = @q.result(distinct: true).includes(:user).order('id DESC').page(params[:page]).per(10)
   end
 
   def new
