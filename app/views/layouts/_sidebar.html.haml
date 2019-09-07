@@ -29,9 +29,10 @@
         %input{type: "reset", value: "クリア", class: "search-buttons__reset"}
         = f.submit '検索', class: 'search-buttons__submit'
     .card__ranking
-      %i.material-icons> grade
-      %span
-        投稿ランキング
+      .ranking-title
+        %i.material-icons> grade
+        %span
+          投稿ランキング
       - @ranking.each.with_index(1) do |article,i|
         = link_to blog_path(article) do
           .rankingbox
