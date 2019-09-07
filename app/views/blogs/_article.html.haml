@@ -1,5 +1,5 @@
 
-.card.article
+.card.article.col.s12
   .card-content.black-text.no-padding
     .title 
       件名： 
@@ -22,9 +22,9 @@
       = article.text
     .images.row
       - if article.images.first.present?
-        = image_tag article.images.first.image.url, class: "col s8  l5 card__image" 
+        = image_tag article.images.first.image.url, class: "col s8 l5 card__image" 
       - if article.images.second.present?
-        = image_tag article.images.second.image.url, class: "col s8  l5 card__image"
+        = image_tag article.images.second.image.url, class: "col s8 l5 card__image"
 
   .card-action
     = link_to "詳細", "/blogs/#{article.id}", method: :get, class: "btn blue accent-3"

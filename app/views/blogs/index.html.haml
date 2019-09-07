@@ -1,6 +1,6 @@
 .container
   .row
-    .col.s12.l9
+    .col.s12.l8
       - @articles.each do |article|
         = render partial: "article", locals: {article: article}
     = render partial: "layouts/sidebar"
