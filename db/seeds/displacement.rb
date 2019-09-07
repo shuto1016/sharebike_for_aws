@@ -21,7 +21,7 @@ Displacement.create!(
     },
 
     {
-      cc: "751cc"
+      cc: "751cc~"
     }
   ]
 
