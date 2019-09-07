@@ -2,7 +2,8 @@
   .card
     .card__user
       %i.material-icons> wc
-      &ensp;ユーザー一覧
+      %span
+        ユーザー一覧
     = search_form_for @q, url: blogs_path  do |f|
       = f.search_field :title_cont, class: "search-form",placeholder: "件名で検索"
       .card__maker
@@ -27,3 +28,22 @@
       .search-buttons
         %input{type: "reset", value: "クリア", class: "search-buttons__reset"}
         = f.submit '検索', class: 'search-buttons__submit'
+    .card__ranking
+      %i.material-icons> grade
+      %span
+        投稿ランキング
+      - @ranking.each.with_index(1) do |article,i|
+        = link_to blog_path(article) do
+          .rankingbox
+            .rankingbox__number
+              = i
+            .rankingbox__image
+              .image-title
+                = article.title
+                .like
+                  %i.material-icons thumb_up
+                  .like__count
+                    = article.likes.count
+
+              - if article.images.first.present?
+                = image_tag article.images.first.image.url, class: "thumbs" 
