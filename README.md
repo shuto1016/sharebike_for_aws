@@ -49,7 +49,7 @@ https://blog-miniapp.herokuapp.com/
 * haml
 
 ## ER図
-![ShareBike](https://user-images.githubusercontent.com/48410843/64476182-c926be00-d1c6-11e9-86b6-a2c9348b6da0.png)
+![ShareBike](https://user-images.githubusercontent.com/48410843/64476257-acd75100-d1c7-11e9-922b-e8d2e5baaf18.png)
 
 
 <!-- # DB設計
