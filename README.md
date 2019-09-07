@@ -21,6 +21,10 @@ https://blog-miniapp.herokuapp.com/
 * いいね機能
   * 非同期通信によるいいね機能
   * いいね一覧機能
+* 記事検索機能
+  * カテゴリー別条件検索機能(ransack)
+* ランキング機能
+  * いいね数の上位５件をランキングで表示
 * レスポンシブ対応
 
 ## テスト
@@ -43,6 +47,9 @@ https://blog-miniapp.herokuapp.com/
 * JQuery
 * Sass
 * haml
+
+## ER図
+![ShareBike](https://user-images.githubusercontent.com/48410843/64476182-c926be00-d1c6-11e9-86b6-a2c9348b6da0.png)
 
 
 <!-- # DB設計
