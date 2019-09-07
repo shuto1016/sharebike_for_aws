@@ -30,7 +30,7 @@
     = link_to "詳細", "/blogs/#{article.id}", method: :get, class: "btn blue accent-3"
     = link_to "編集", "/blogs/#{article.id}/edit", method: :get, class: "btn blue accent-3"
     = link_to "削除", "/blogs/#{article.id}", method: :delete, class: "btn blue accent-3 delete"
-    %span.card-action__name
+    %span.card-action__name.col.s12.no-padding
       .like{id: article.id}
         = render partial:'like/like', locals: {article: article}
       更新日時：#{article.updated_at.to_formatted_s(:datetime)}   
