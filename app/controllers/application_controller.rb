@@ -18,6 +18,6 @@ before_action :like_ranking
   
   private
   def search_params
-    params.permit(:q)
+    params.require(:q).permit!
   end
 end
