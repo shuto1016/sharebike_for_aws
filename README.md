@@ -1,5 +1,5 @@
 ## Sharebike
-https://blog-miniapp.herokuapp.com/  
+http://13.113.231.57/  
 自分のバイク情報を共有し、検索もできるSNSです。  
 
 テスト用アカウント  
@@ -47,6 +47,8 @@ https://blog-miniapp.herokuapp.com/
 * JQuery
 * Sass
 * haml
+* capistrano
+
 
 ## ER図
 ![ShareBike](https://user-images.githubusercontent.com/48410843/64476257-acd75100-d1c7-11e9-922b-e8d2e5baaf18.png)
