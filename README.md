@@ -39,7 +39,7 @@ https://blog-miniapp.herokuapp.com/
 * コードエディタ(VSCode)
 
 ## 本番環境
-* heroku
+* AWS-EC2
 * 画像ストレージ(Amazon S3)
 
 ## 使用ツール・ライブラリ
