@@ -9,15 +9,11 @@ before_action :like_ranking
   end
 
   def ransack_search
-    @q = Article.ransack(search_params)
+    @q = Article.ransack(params[:q])
   end
 
   def like_ranking
     @ranking = Article.find(Like.group(:article_id).order('count(article_id) desc').limit(5).pluck(:article_id))
   end
   
-  private
-  def search_params
-    params.require(:q).permit!
-  end
 end
