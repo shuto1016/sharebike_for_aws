@@ -16,7 +16,7 @@
         .title
           %i.material-icons> done
           %span排気量
-        .card__displacement-list.col.s12
+        .card__displacement-list
           = f.collection_check_boxes(:displacements_id_in, Displacement.all, :id, :cc)
       .card__type
         .title
