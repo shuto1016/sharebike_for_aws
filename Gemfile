@@ -78,6 +78,5 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog'
+gem 'fog-aws'
 gem 'ransack'
-
